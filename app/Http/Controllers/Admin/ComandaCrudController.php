@@ -28,28 +28,6 @@ class ComandaCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->addField([
-
-            'label'=> "Productos",
-            'type'=> 'select2',
-            'name'=> 'id_productos',
-            'entity'=> 'hasProducts',
-            'attribute'=> 'Nombre',
-            'model' => "App\Models\Producto",
-            
-        ]);
-
-        $this->crud->addField([
-
-            'label'=> "Número de mesas",
-            'type'=> 'select2',
-            'name'=> 'num_mesa',
-            'entity'=> 'mesas',
-            'attribute'=> 'Numero',
-            'model' => "App\Models\Mesa",
-            
-        ]);
-
         $this->crud->setFromDb();
 
         // ------ CRUD FIELDS

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql2'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -53,21 +53,6 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
-        /*----------------------------------------------+
-        |    CONEXION A LA BASE DE DATOS DE JULI        |
-        ------------------------------------------------*/
-        'mysql2' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST_SECOND'),
-            'port' => env('DB_PORT_SECOND'),
-            'database' => env('DB_DATABASE_SECOND'),
-            'username' => env('DB_USERNAME_SECOND'),
-            'password' => env('DB_PASSWORD_SECOND'),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-        ],
-
 
         'pgsql' => [
             'driver' => 'pgsql',

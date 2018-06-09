@@ -19,12 +19,8 @@ class Usuario extends Model
     protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    
-    // Atributos que se pueden asignar de manera masiva.
-    protected $fillable = [];
-
-    // Aquí ponemos los campos que no queremos que se devuelvan en las consultas.
-    protected $hidden = [];
+    protected $fillable = ['idProductos','Nombre','Descripcion','Precio','CantidadStock'];
+    protected $hidden = ['idUsuarios','remember_token','created_at','update_at','actions'];
     // protected $dates = [];
 
     /*

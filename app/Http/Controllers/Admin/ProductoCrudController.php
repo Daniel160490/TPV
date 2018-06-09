@@ -28,20 +28,6 @@ class ProductoCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->addField([
-
-            'label'=> "Categorias",
-            'type'=> 'select2',
-            'name'=> 'idCategorias',
-            'entity'=> 'categorias',
-            'attribute'=> 'Nombre',
-            'model' => "App\Models\Categorias",
-            
-        ]);
-
-        
-
-
         $this->crud->setFromDb();
 
         // ------ CRUD FIELDS

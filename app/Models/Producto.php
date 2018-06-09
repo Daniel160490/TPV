@@ -16,15 +16,11 @@ class Producto extends Model
     */
 
     protected $table = 'productos';
-    protected $primaryKey = 'idProductos';
+    // protected $primaryKey = 'id';
     // public $timestamps = false;
-    protected $guarded = ['idProductos'];
-
-    // Atributos que se pueden asignar de manera masiva.
-    //protected $fillable = ['idProductos'];
-
-    // Aquí ponemos los campos que no queremos que se devuelvan en las consultas.
-    protected $hidden = ['idProductos'];
+    // protected $guarded = ['id'];
+    protected $fillable = [];
+    // protected $hidden = [];
     // protected $dates = [];
 
     /*
@@ -38,18 +34,6 @@ class Producto extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    //CATEGORIAS
-    public function categorias()
-    {
-        return $this->belongsTo('App\Models\Categorias', 'idCategorias');
-    }
-
-    //COMANDAS
-    public function comandas()
-    {
-        return $this->belongsTo('App\Models\Comandas');
-    }
 
     /*
     |--------------------------------------------------------------------------

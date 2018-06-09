@@ -15,9 +15,6 @@ class CreateComandasTable extends Migration
     {
         Schema::create('comandas', function (Blueprint $table) {
             $table->increments('idComandas')->unique();
-            $table->integer('id_productos')->nullable();
-            $table->integer('id_usuarios')->nullable();
-            $table->integer('num_mesa')->nullable();
             $table->dateTime('FechaEmision');
             $table->dateTime('FechaFin');
             $table->timestamps();
