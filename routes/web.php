@@ -1,25 +1,37 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 App::setLocale('es');
-
+use App\Models\Producto;
+Auth::routes();
 
 Route::get('/', function () {
-    return view('main');
+    return view('AdminTheme.master');
+});
+
+
+//Route::get('/','HomeController@index');
+
+Route::get('/calendario', function () {
+    return view('AdminTheme.calendario');
+});
+
+Route::get('/creditos', function () {
+    return view('AdminTheme.creditos');
+});
+
+Route::get('/perfil', function () {
+    return view('AdminTheme.perfil');
+});
+
+Route::get('/registro', function () {
+    return view('AdminTheme.auth.register');
 });
 
 ROUTE::get('/tpv', function (){
-    return view('layouts.tpv');
+    $productos = Producto::all();
+    return view('layouts.tpv')->with(compact('productos'));
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'namespace' => 'Admin'], function(){
@@ -29,8 +41,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'namespace' => 'Ad
     CRUD::resource('comanda', 'ComandaCrudController');
 });
 
-
-//MAPEO DE API
-Route::get('api/v1/productos', 'ProductosController@getProductos');
-Route::get('api/v1/comandas', 'ComandasController@getComandas');
-Route::get('api/v1/eventos', 'EventosController@getEventos');
